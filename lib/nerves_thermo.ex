@@ -1,5 +1,5 @@
 defmodule NervesThermo do
-  #use NervesDht
+  use NervesDht
   @moduledoc """
   Documentation for NervesThermo.
   """
@@ -15,8 +15,13 @@ defmodule NervesThermo do
   """
   #def listen({:ok, p, s, h, t}) do
   #  IO.puts("Listen event on MyGenServer")
-  #  IO.puts("Pin: #{p}, Sensor: #{s}\n")
-  #  IO.puts("Temperature: #{t}, Humidity: #{h})\n")
+  #  IO.puts("Pin: #{p}, Sensor: #{s}")
+  #  IO.puts("Temperature: #{t} Humidity: #{h}\n")
+  #end
+
+  #def listen({:error, error}) do
+  #  IO.puts("Listen event on MyGenServer")
+  #  IO.puts("Error: #{error}\n")
   #end
 
   #iex> {:ok, dht} = MyGenServer.start_link({2, 22})
@@ -30,7 +35,7 @@ defmodule NervesThermo do
   end
 
   def init do
-    #dht = NervesThermo.start_link({26,11})
+    dht = NervesThermo.start_link({26,11})
   end
 
 end
