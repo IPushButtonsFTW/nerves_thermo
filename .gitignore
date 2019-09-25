@@ -17,3 +17,4 @@
 erl_crash.dump
 *.swp
 repos.log
+/.elxir_ls/

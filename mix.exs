@@ -58,14 +58,8 @@ defmodule NervesThermo.MixProject do
       {:nerves_system_bbb, "~> 2.3", runtime: false, targets: :bbb},
       {:nerves_system_x86_64, "~> 1.8", runtime: false, targets: :x86_64},
 
-      # Does the dirty work of streaming in the bits for the temp/thermo
-      #{:nerves_dht, "~> 0.1.0"},  #esdrasedu/nerves_dht
-      {:nerves_dht, github: "jjcarstens/nerves_dht"},
+      {:pigpiox, "~> 0.1"},
 
-      #{:dht, github: "almightycouch/elixir-dht-sensor"},
-      #{:nerves_dht, git: "https://github.com/visciang/nerves_dht.git", tag: "1.1.4"},
-      # needed to do ethernet w/ nerves...
-      #{:grovepi, "~> 0.5.1"}, #seems specific to hardware device for pi
 
       {:nerves_network, "~> 0.5"}
     ]

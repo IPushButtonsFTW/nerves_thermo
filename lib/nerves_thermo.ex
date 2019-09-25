@@ -1,5 +1,5 @@
 defmodule NervesThermo do
-  use NervesDht
+  #use NervesDht
   @moduledoc """
   Documentation for NervesThermo.
   """
@@ -35,7 +35,21 @@ defmodule NervesThermo do
   end
 
   def init do
-    dht = NervesThermo.start_link({26,11})
+    #dht = NervesThermo.start_link({26,11})
   end
+
+  def watch do
+    {:ok, pid} = Pigpiox.GPIO.watch(26)
+    receive do
+      {:gpio_leveL_change, gpio, level} -> IO.puts "#{gpio} now at #{level}"
+    end
+    pid
+  end
+
+  def stop(pid) do
+    GenServer.stop pid
+  end
+
+
 
 end
