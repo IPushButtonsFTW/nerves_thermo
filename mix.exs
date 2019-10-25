@@ -59,7 +59,6 @@ defmodule NervesThermo.MixProject do
       {:nerves_system_x86_64, "~> 1.8", runtime: false, targets: :x86_64},
 
       # Does the dirty work of streaming in the bits for the temp/thermo
-      #{:nerves_dht, "~> 0.1.0"},  #esdrasedu/nerves_dht #you can use this as the official release once he updates it on hex
       {:nerves_dht, github: "jjcarstens/nerves_dht"},
 
       {:nerves_network, "~> 0.5"}

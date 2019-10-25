@@ -22,4 +22,10 @@ defmodule NervesThermo do
     dht = NervesThermo.start_link({26,11})
   end
 
+  def monitor(dht) do
+    IO.inspect((NervesThermo.info dht))
+    Process.sleep 2000
+    monitor(dht)
+  end
+
 end
